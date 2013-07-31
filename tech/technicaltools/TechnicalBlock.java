@@ -11,10 +11,11 @@ public class TechnicalBlock extends Block {
 		super(par1, par2Material);
 		
 		// Variables for the Blocks
-		this.setHardness(5.0F);
+		this.setHardness(10.0F);
 		this.setStepSound(Block.soundMetalFootstep);
 		this.setUnlocalizedName("technicalBlock");
 		this.setCreativeTab(CreativeTabs.tabBlock);
+		this.setResistance(-1.0F);
 	}
 	
 	@Override

@@ -13,7 +13,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 // Info for Minecraft Forge
-@Mod (modid="technicaltools", name="Technical Tool Pack", version="0.1 for MC 1.6.2 - FORGE 9.10.0.789")
+@Mod (modid="technicaltools", name="Technical Tool Pack", version="0.1 for MC 1.6.2 - FORGE 9.10.0.804")
 @NetworkMod (clientSideRequired=true, serverSideRequired=false)
 
 public class Main {
