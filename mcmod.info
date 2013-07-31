@@ -1,12 +1,12 @@
 [
 {
-"modid":"bouncingblockmod",
-"name": "Bouncing Block Mod",
-"description": "Adds the Bouncing Block and the Padding Block.",
-"version": "1.5",
+"modid":"technicaltools",
+"name": "Technical Tool Pack",
+"description": "Technical Tool Pack",
+"version": "0.1",
 "mcversion": "1.6.2",
 "logoFile": "/techlogo.png",
-"url": "http://adf.ly/T0K1G",
+"url": "None yet",
 "authors": ["TechnicalParadox"],
 "credits": "Made by TechnicalParadox",
 "parent": "",
