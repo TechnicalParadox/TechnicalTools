@@ -2,8 +2,11 @@ package tech.technicaltools;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.EnumArmorMaterial;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
+import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -46,13 +49,17 @@ public class Main {
 	public static TechnicalShovel technicalShovel;
 	public static TechnicalAxe technicalAxe;
 	
-	// Armor
-	public static TechnicalHelmet technicalHelmet;
-	public static TechnicalChestplate technicalChestplate;
-	public static TechnicalLeggings technicalLeggings;
-	public static TechnicalBoots technicalBoots;
+	// Material Section
+	public static EnumArmorMaterial technicalArmor =
+			EnumHelper.addArmorMaterial("TechnicalArmor", 40, new int[] {14, 8, 10, 8}, 15);
 	
-	//Instance of Mod
+	// Armor Section
+	public static Item technicalHelmet;
+	public static Item technicalChestplate;
+	public static Item technicalLeggings;
+	public static Item technicalBoots;
+	
+	// Instance of Mod
 	public static Main instance;
 	
 	//PreInitialization Events
@@ -68,33 +75,39 @@ public class Main {
 		// Get IDs from config file
 		technicalOreID = config.get("Block IDs", "Technical Ore ID", 1500).getInt();
 		technicalBlockID = config.get("Block IDs", "Technical Block", 1501).getInt();
+		
 		technicalIngotID = config.get("Material IDs", "Technical Ingot ID", 1502).getInt();
 		obsidianStickID = config.get("Material IDs", "Obsidian Stick ID", 1503).getInt();
+		
 		technicalSwordID =  config.get("Tool IDs", "Technical Sword ID", 1504).getInt();
 		technicalPickaxeID = config.get("Tool IDs", "Technical Pickaxe ID", 1505).getInt();
 		technicalShovelID = config.get("Tool IDs", "Technical Shovel ID", 1506).getInt();
 		technicalAxeID = config.get("Tool IDs", "Technical Axe ID", 1507).getInt();
+		
 		technicalHelmetID = config.get("Armor IDs", "Technical Helmet ID", 1508).getInt();
-		technicalChestplateID = config.get("Armor IDs", "Technical Chesplate ID", 1509).getInt();
+		technicalChestplateID = config.get("Armor IDs", "Technical Chestplate ID", 1509).getInt();
 		technicalLeggingsID = config.get("Armor IDs", "Technical Leggings ID", 1510).getInt();
 		technicalBootsID = config.get("Armor IDs",  "Technical Boots ID", 1511).getInt();
 		
 		// Save config
 		config.save();
 		
-		// Initialize Blocks/Tools/Armor/Items
+		// Initialize Blocks/Items/Tools/Armor
 		this.technicalOre = new TechnicalOre (technicalOreID);
 		this.technicalBlock = new TechnicalBlock (technicalBlockID, Material.ground);
+		
 		this.technicalIngot = new TechnicalIngot (technicalIngotID);
 		this.obsidianStick = new ObsidianStick (obsidianStickID);
+		
 		this.technicalSword = new TechnicalSword (technicalSwordID);
 		this.technicalPickaxe = new TechnicalPickaxe (technicalPickaxeID);
 		this.technicalShovel = new TechnicalShovel (technicalShovelID);
 		this.technicalAxe = new TechnicalAxe (technicalAxeID);
-		this.technicalHelmet = new TechnicalHelmet (technicalHelmetID);
-		this.technicalChestplate = new TechnicalChestplate (technicalChestplateID);
-		this.technicalLeggings = new TechnicalLeggings (technicalLeggingsID);
-		this.technicalBoots = new TechnicalBoots (technicalBootsID);
+		
+		technicalHelmet = new TechnicalArmor (technicalHelmetID, technicalArmor, 0, 0, "Technical");
+		technicalChestplate = new TechnicalArmor (technicalChestplateID, technicalArmor, 0, 1, "Technical");
+		technicalLeggings = new TechnicalArmor (technicalLeggingsID, technicalArmor, 0, 2, "Technical");
+		technicalBoots = new TechnicalArmor (technicalBootsID, technicalArmor, 0, 3, "Technical");
 		
 		// Info for Technical Ore
 		LanguageRegistry.addName(technicalOre, "Technical Ore");
@@ -145,7 +158,6 @@ public class Main {
 					'o', Block.obsidian, 'i', technicalIngot);
 			// Obsidian Stick
 			GameRegistry.addRecipe(new ItemStack(obsidianStick, 4),
-					"   ",
 					" o ",
 					" o ",
 					'o', Block.obsidian);
@@ -177,7 +189,6 @@ public class Main {
 			GameRegistry.addRecipe(new ItemStack(technicalHelmet, 1),
 					"ioi",
 					"i i",
-					"   ",
 					'i', technicalIngot, 'o', Block.obsidian);
 			// Technical Chestplate
 			GameRegistry.addRecipe(new ItemStack(technicalChestplate, 1),
@@ -193,7 +204,6 @@ public class Main {
 					'i', technicalIngot, 'o', Block.obsidian);
 			// Technical Boots
 			GameRegistry.addRecipe(new ItemStack(technicalBoots, 1),
-					"   ",
 					"i i",
 					"o o",
 					'i', technicalIngot, 'o', Block.obsidian);

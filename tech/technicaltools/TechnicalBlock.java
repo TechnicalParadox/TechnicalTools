@@ -15,7 +15,7 @@ public class TechnicalBlock extends Block {
 		this.setStepSound(Block.soundMetalFootstep);
 		this.setUnlocalizedName("technicalBlock");
 		this.setCreativeTab(CreativeTabs.tabBlock);
-		this.setResistance(-1.0F);
+		this.setResistance(100.0F);
 	}
 	
 	@Override
