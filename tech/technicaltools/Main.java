@@ -213,6 +213,8 @@ public class Main {
 			// Technical Ore -> Technical Ingot
 			GameRegistry.addSmelting(technicalOreID, new ItemStack(technicalIngot),  0.9f);
 		
+		// Ore gen
+		GameRegistry.registerWorldGenerator(new TechnicalOreGen());
 	}
 	
 }
