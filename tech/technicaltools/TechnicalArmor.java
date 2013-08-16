@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack;
 
 public class TechnicalArmor extends ItemArmor {
 	
-	private String texturePath = "technicaltools:";
+	private String texturePath = "technicaltools:textures/models/armor/";
 	private String iconPath = "technicaltools:";
 
 	public TechnicalArmor(int par1, EnumArmorMaterial par2EnumArmorMaterial,
@@ -21,7 +21,7 @@ public class TechnicalArmor extends ItemArmor {
 		
 		this.setMaxStackSize(1);
 		this.setCreativeTab(CreativeTabs.tabCombat);
-		this.SetArmorType(type .toLowerCase(), par4);
+		this.SetArmorType(type.toLowerCase(), par4);
 	}
 	
 	// 0 = helmet
@@ -34,22 +34,22 @@ public class TechnicalArmor extends ItemArmor {
 		{
 		case 0:
 			this.setUnlocalizedName(type + "Helmet");
-			this.texturePath += "textures/models/armor/technical_layer_1.png";
+			this.texturePath += "technical_1.png";
 			this.iconPath += type + "_helmet";
 			break;
 		case 1:
 			this.setUnlocalizedName(type + "Chestplate");
-			this.texturePath += "textures/models/armor/technical_layer_1.png";
+			this.texturePath += "technical_1.png";
 			this.iconPath += type + "_chestplate";
 			break;
 		case 2:
 			this.setUnlocalizedName(type + "Leggings");
-			this.texturePath += "textures/models/armor/technical_layer_2.png";
+			this.texturePath += "technical_2.png";
 			this.iconPath += type + "_leggings";
 			break;
 		case 3:
 			this.setUnlocalizedName(type + "Boots");
-			this.texturePath += "textures/models/armor/technical_layer_1.png";
+			this.texturePath += "technical_1.png";
 			this.iconPath += type + "_boots";
 			break;
 		}
