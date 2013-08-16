@@ -158,14 +158,14 @@ public class Main {
 					'o', Block.obsidian, 'i', technicalIngot);
 			// Obsidian Stick
 			GameRegistry.addRecipe(new ItemStack(obsidianStick, 4),
-					" o ",
-					" o ",
+					"o",
+					"o",
 					'o', Block.obsidian);
 			// Technical Sword
 			GameRegistry.addRecipe(new ItemStack(technicalSword, 1),
-					" i ",
-					" i ",
-					" s ",
+					"i",
+					"i",
+					"s",
 					'i', technicalIngot, 'o', obsidianStick);
 			// Technical Pickaxe
 			GameRegistry.addRecipe(new ItemStack(technicalPickaxe, 1),
@@ -175,15 +175,21 @@ public class Main {
 					'i', technicalIngot, 's', obsidianStick);
 			// Technical Shovel
 			GameRegistry.addRecipe(new ItemStack(technicalShovel, 1),
-					" i ",
-					" s ",
-					" s ",
+					"i",
+					"s",
+					"s",
 					'i', technicalIngot, 's', obsidianStick);
-			// Technical Axe
+			// Technical Axe Right
 			GameRegistry.addRecipe(new ItemStack(technicalAxe, 1),
-					" ii",
-					" si",
-					" s ",
+					"ii",
+					"si",
+					"s ",
+					'i', technicalIngot, 's', obsidianStick);
+			// Technical Axe Left
+			GameRegistry.addRecipe(new ItemStack(technicalAxe, 1),
+					"ii",
+					"is",
+					" s",
 					'i', technicalIngot, 's', obsidianStick);
 			// Technical Helmet
 			GameRegistry.addRecipe(new ItemStack(technicalHelmet, 1),
