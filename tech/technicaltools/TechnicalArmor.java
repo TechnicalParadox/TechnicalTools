@@ -34,22 +34,22 @@ public class TechnicalArmor extends ItemArmor {
 		{
 		case 0:
 			this.setUnlocalizedName(type + "Helmet");
-			this.texturePath += "technical_1.png";
+			this.texturePath += type + "textures/models/armor/technical_layer_1.png";
 			this.iconPath += type + "_helmet";
 			break;
 		case 1:
 			this.setUnlocalizedName(type + "Chestplate");
-			this.texturePath += "technical_1.png";
+			this.texturePath += type + "textures/models/armor/technical_layer_1.png";
 			this.iconPath += type + "_chestplate";
 			break;
 		case 2:
 			this.setUnlocalizedName(type + "Leggings");
-			this.texturePath += "technical_2.png";
+			this.texturePath += type + "textures/models/armor/technical_layer_2.png";
 			this.iconPath += type + "_leggings";
 			break;
 		case 3:
 			this.setUnlocalizedName(type + "Boots");
-			this.texturePath += "technical_1.png";
+			this.texturePath += type + "textures/models/armor/technical_layer_1.png";
 			this.iconPath += type + "_boots";
 			break;
 		}
